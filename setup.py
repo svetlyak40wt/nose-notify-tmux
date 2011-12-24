@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-nose-notify
+nose-notify-tmux
 ~~~~~~~~~~~
 
 A nose plugin to display testsuite progress in the notify osd.
@@ -11,17 +11,17 @@ A nose plugin to display testsuite progress in the notify osd.
 """
 
 from setuptools import setup
-from nosenotify import __version__
+from nosenotifytmux import __version__
 
 
 setup(
-    name="nose-notify",
+    name="nose-notify-tmux",
     version=__version__,
-    author="Pascal Hartig",
-    author_email="phartig@rdrei.de",
-    description="A nose plugin to display testsuite progress in the notify osd",
-    url="http://github.com/passy/nose-notify",
-    packages=['nosenotify'],
+    author="Alexander Artemenko",
+    author_email="svetlyak.40wt@gmail.com",
+    description="A nose plugin to display testsuite progress in TMUX",
+    url="http://github.com/svetluyak40wt/nose-notify-tmux",
+    packages=['nosenotifytmux'],
     long_description=__doc__,
     requires=['nose (>=0.10)'],
     classifiers=[
@@ -32,8 +32,8 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
     entry_points={
-        'nose.plugins.0.10': [
-            'notify = nosenotify.plugin:NotifyPlugin'
+        'nose.plugins': [
+            'tmux = nosenotifytmux.plugin:NotifyPlugin'
         ]
     }
 )

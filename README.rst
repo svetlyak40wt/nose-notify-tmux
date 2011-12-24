@@ -1,20 +1,14 @@
-===========
-nose-notify
-===========
+================
+nose-notify-tmux
+================
 
-Notify-OSD notifications on Ubuntu systems on testsuite start and completions.
+Notifications for `Tmux`_ on testsuite start and completions.
 
 
 Usage
 -----
 
-Run nosetests with the ``--with-notify`` flag. Enjoy.
-
-Options
-~~~~~~~
-
-Passing the ``--no-start-message`` flag skips the notification at the beginning
-of your test run. This is useful in case your test suite passes really quickly.
+Run nosetests with the ``--with-notifyplugin`` flag. Enjoy.
 
 Thanks
 ------
@@ -22,3 +16,4 @@ Thanks
 Thanks to Victor Ng and `nose-growl`_ for the inspiration.
 
 .. _nose-growl: http://bitbucket.org/crankycoder/nosegrowl
+.. _Tmux: http://tmux.sourceforge.net/
