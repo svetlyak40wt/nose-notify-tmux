@@ -8,7 +8,7 @@ Notifications for `Tmux`_ on testsuite start and completions.
 Usage
 -----
 
-Run nosetests with the ``--with-notifyplugin`` flag. Enjoy.
+Run nosetests with the ``--with-tmux`` flag. Enjoy.
 
 Thanks
 ------
