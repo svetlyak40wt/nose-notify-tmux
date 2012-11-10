@@ -14,6 +14,7 @@ import subprocess
 import atexit
 
 from nose.plugins import Plugin
+from functools import partial
 
 
 class NotifyPlugin(Plugin):
@@ -80,7 +81,14 @@ class NotifyPlugin(Plugin):
                 shell=True
             )
 
-    def prepareTest(self, test):
-        self._total_tests += test.countTestCases()
-        return test
+    def prepareTestLoader(self, loader):
+        def decorator(orig_method, *args, **kwargs):
+            self._total_tests += orig_method(*args, **kwargs).countTestCases()
+            return orig_method(*args, **kwargs)
+
+        if hasattr(loader, 'loadTestsFromNames'):
+            loader.loadTestsFromNames = partial(
+                decorator,
+                loader.loadTestsFromNames
+            )
 
