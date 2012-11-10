@@ -55,6 +55,9 @@ class NotifyPlugin(Plugin):
         super(NotifyPlugin, self).configure(options, conf)
         self.pane = os.environ.get('TMUX_PANE')
 
+        self.progress_color = options.progress_color
+        self.error_color = options.error_color
+
     def options(self, parser, env):
         super(NotifyPlugin, self).options(parser, env)
         parser.add_option('--progress-color',
@@ -65,9 +68,6 @@ class NotifyPlugin(Plugin):
                           action='store',
                           dest='error_color',
                           default='red')
-        options, args = parser.parse_args()
-        self.progress_color = options.progress_color
-        self.error_color = options.error_color
 
     def stopTest(self, test):
         self._progress += 1
